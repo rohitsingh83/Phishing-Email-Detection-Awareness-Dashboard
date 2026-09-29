@@ -1,11 +1,14 @@
 # Phishing Email Detection & Security Awareness Dashboard (PhishShield)
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-brightgreen.svg?logo=github)](https://rohitsingh83.github.io/Phishing-Email-Detection-Awareness-Dashboard/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688.svg)](https://fastapi.tiangolo.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Defensive Cybersecurity](https://img.shields.io/badge/Cybersecurity-Defensive-red.svg)]()
 [![Automated Tests](https://img.shields.io/badge/tests-25%20passed-brightgreen.svg)]()
 
+> 🌐 **Live Website (Independent, Zero-Backend):** [https://rohitsingh83.github.io/Phishing-Email-Detection-Awareness-Dashboard/](https://rohitsingh83.github.io/Phishing-Email-Detection-Awareness-Dashboard/)
+>
 > **Defensive cybersecurity platform for analyzing synthetic email content, sender patterns, URLs, attachments, and social-engineering indicators to generate explainable phishing risk assessments and security awareness guidance.**
 
 ---

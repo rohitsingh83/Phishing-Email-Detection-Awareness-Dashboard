@@ -1,0 +1,14 @@
+# Render.com Blueprint Specification for Free Cloud Web Service
+services:
+  - type: web
+    name: phishshield-dashboard
+    env: python
+    buildCommand: "pip install -r requirements.txt && python data/generate_dataset.py && python ml/train_model.py && python scripts/seed_demo_data.py"
+    startCommand: "uvicorn backend.app:app --host 0.0.0.0 --port $PORT"
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: ENVIRONMENT
+        value: production

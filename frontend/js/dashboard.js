@@ -17,39 +17,51 @@ let chartTrend = null;
 let chartKeywords = null;
 
 async function fetchAndUpdateDashboard() {
+  let data = null;
   try {
-    const res = await fetch("/api/dashboard/stats");
-    if (!res.ok) throw new Error("Failed to fetch dashboard statistics.");
-    const data = await res.json();
-
-    // Update KPI Metric Cards
-    document.getElementById("kpi-total").innerText = data.total_analyzed;
-    document.getElementById("kpi-phishing").innerText = data.likely_phishing;
-    document.getElementById("kpi-suspicious").innerText = data.suspicious;
-    document.getElementById("kpi-safe").innerText = data.low_risk;
-    document.getElementById("kpi-avg-score").innerText = data.average_risk_score.toFixed(1);
-
-    // 1. Classification Donut Chart
-    renderClassificationChart(data);
-
-    // 2. Phishing vs Legitimate Ratio Pie Chart
-    renderRatioChart(data);
-
-    // 3. Top Indicators Horizontal Bar Chart
-    renderIndicatorsChart(data.top_indicators);
-
-    // 4. Risk Bands Bar Chart
-    renderRiskBandsChart(data.distribution);
-
-    // 5. Recent Trend Line Chart
-    renderTrendChart(data.recent_trend);
-
-    // 6. Suspicious Keywords Bar Chart
-    renderKeywordsChart(data.top_keywords);
-
+    if (window.isApiOnline !== false) {
+      const res = await fetch("/api/dashboard/stats");
+      if (res.ok) data = await res.json();
+    }
   } catch (err) {
-    console.error("Dashboard telemetry error:", err);
+    console.warn("API offline, rendering charts from local client engine:", err);
   }
+
+  if (!data && window.phishEngine) {
+    data = window.phishEngine.getStats();
+  }
+  if (!data) return;
+
+  // Update KPI Metric Cards
+  const kTotal = document.getElementById("kpi-total");
+  const kPhish = document.getElementById("kpi-phishing");
+  const kSusp = document.getElementById("kpi-suspicious");
+  const kSafe = document.getElementById("kpi-safe");
+  const kAvg = document.getElementById("kpi-avg-score");
+
+  if (kTotal) kTotal.innerText = data.total_analyzed;
+  if (kPhish) kPhish.innerText = data.likely_phishing;
+  if (kSusp) kSusp.innerText = data.suspicious;
+  if (kSafe) kSafe.innerText = data.low_risk;
+  if (kAvg) kAvg.innerText = Number(data.average_risk_score).toFixed(1);
+
+  // 1. Classification Donut Chart
+  renderClassificationChart(data);
+
+  // 2. Phishing vs Legitimate Ratio Pie Chart
+  renderRatioChart(data);
+
+  // 3. Top Indicators Horizontal Bar Chart
+  renderIndicatorsChart(data.top_indicators);
+
+  // 4. Risk Bands Bar Chart
+  renderRiskBandsChart(data.distribution);
+
+  // 5. Recent Trend Line Chart
+  renderTrendChart(data.recent_trend);
+
+  // 6. Suspicious Keywords Bar Chart
+  renderKeywordsChart(data.top_keywords);
 }
 
 function renderClassificationChart(data) {

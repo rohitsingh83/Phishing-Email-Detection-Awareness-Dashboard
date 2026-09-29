@@ -221,31 +221,51 @@
       </div>
 
       <div class="charts-grid">
+        <!-- Chart 1: Classification Distribution -->
         <div class="chart-card">
-          <h4 class="chart-title">Threat Classification Distribution</h4>
+          <h4 class="chart-title">1. Threat Classification Breakdown</h4>
           <div class="chart-wrapper">
             <canvas id="chart-classification"></canvas>
           </div>
         </div>
 
+        <!-- Chart 2: Phishing vs Legitimate -->
         <div class="chart-card">
-          <h4 class="chart-title">Risk Score Distribution Bands</h4>
+          <h4 class="chart-title">2. Phishing vs. Legitimate Ratio</h4>
           <div class="chart-wrapper">
-            <canvas id="chart-risk-bands"></canvas>
+            <canvas id="chart-ratio"></canvas>
           </div>
         </div>
 
-        <div class="chart-card col-span-2">
-          <h4 class="chart-title">Top Detected Phishing Indicators</h4>
+        <!-- Chart 3: Top Detected Indicators -->
+        <div class="chart-card">
+          <h4 class="chart-title">3. Top Detected Phishing Indicators</h4>
           <div class="chart-wrapper">
             <canvas id="chart-indicators"></canvas>
           </div>
         </div>
 
-        <div class="chart-card col-span-2">
-          <h4 class="chart-title">Recent Threat Score Timeline Trend</h4>
+        <!-- Chart 4: Risk Score Distribution -->
+        <div class="chart-card">
+          <h4 class="chart-title">4. Risk Score Distribution Bands</h4>
+          <div class="chart-wrapper">
+            <canvas id="chart-risk-bands"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 5: Detection Timeline Trend -->
+        <div class="chart-card">
+          <h4 class="chart-title">5. Detection Trend Timeline</h4>
           <div class="chart-wrapper">
             <canvas id="chart-trend"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 6: Most Common Suspicious Keywords -->
+        <div class="chart-card">
+          <h4 class="chart-title">6. Most Common Suspicious Keywords</h4>
+          <div class="chart-wrapper">
+            <canvas id="chart-keywords"></canvas>
           </div>
         </div>
       </div>
@@ -256,7 +276,55 @@
       <div class="section-header">
         <div>
           <h2 class="section-title">Security Awareness &amp; Interactive Defense Training</h2>
-          <p class="section-desc">Actionable micro-lessons, simulation templates, and the "Before You Click" verification checklist.</p>
+          <p class="section-desc">Actionable micro-lessons, the 10-point spotting guide, safe simulation templates, and the "Before You Click" checklist.</p>
+        </div>
+      </div>
+
+      <!-- 10 Steps to Spot Phishing Guide -->
+      <div class="panel" style="margin-bottom: 1.5rem;">
+        <h3 class="panel-title">🛡️ "How to Spot a Phishing Email" — The 10 Fundamental Signals</h3>
+        <p class="panel-subtitle">Train your instincts to evaluate incoming messages against these 10 industry indicators:</p>
+        <div class="spotting-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+          <div class="spot-card" style="background:var(--bg-secondary); padding:0.9rem; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
+            <div style="color:#38bdf8; font-weight:700; margin-bottom:0.2rem;">1. Sender Address</div>
+            <p style="font-size:0.82rem; color:var(--text-secondary);">Check the domain following '@'. Attackers often use lookalike domains (e.g. <code>support@paypa1.com</code>).</p>
+          </div>
+          <div class="spot-card" style="background:var(--bg-secondary); padding:0.9rem; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
+            <div style="color:#38bdf8; font-weight:700; margin-bottom:0.2rem;">2. Domain Spelling</div>
+            <p style="font-size:0.82rem; color:var(--text-secondary);">Watch for typosquatting (substituting '0' for 'o', or 'rn' for 'm').</p>
+          </div>
+          <div class="spot-card" style="background:var(--bg-secondary); padding:0.9rem; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
+            <div style="color:#38bdf8; font-weight:700; margin-bottom:0.2rem;">3. Unexpected Urgency</div>
+            <p style="font-size:0.82rem; color:var(--text-secondary);">Demands to act within "2 hours" or "24 hours" are designed to bypass critical thinking.</p>
+          </div>
+          <div class="spot-card" style="background:var(--bg-secondary); padding:0.9rem; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
+            <div style="color:#38bdf8; font-weight:700; margin-bottom:0.2rem;">4. Suspicious Links</div>
+            <p style="font-size:0.82rem; color:var(--text-secondary);">Hover to verify. Look out for raw numerical IP addresses or shortened URLs hiding true hosts.</p>
+          </div>
+          <div class="spot-card" style="background:var(--bg-secondary); padding:0.9rem; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
+            <div style="color:#38bdf8; font-weight:700; margin-bottom:0.2rem;">5. Credential Requests</div>
+            <p style="font-size:0.82rem; color:var(--text-secondary);">Legitimate organizations never ask you to enter passwords, PINs, or 2FA codes from email links.</p>
+          </div>
+          <div class="spot-card" style="background:var(--bg-secondary); padding:0.9rem; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
+            <div style="color:#38bdf8; font-weight:700; margin-bottom:0.2rem;">6. Unexpected Attachments</div>
+            <p style="font-size:0.82rem; color:var(--text-secondary);">Scrutinize double extensions (e.g. <code>Invoice.pdf.exe</code>) and macro files (<code>.docm</code>).</p>
+          </div>
+          <div class="spot-card" style="background:var(--bg-secondary); padding:0.9rem; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
+            <div style="color:#38bdf8; font-weight:700; margin-bottom:0.2rem;">7. Generic Greetings</div>
+            <p style="font-size:0.82rem; color:var(--text-secondary);">Salutations like "Dear Customer" or "Dear Member" suggest automated spray-and-pray attacks.</p>
+          </div>
+          <div class="spot-card" style="background:var(--bg-secondary); padding:0.9rem; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
+            <div style="color:#38bdf8; font-weight:700; margin-bottom:0.2rem;">8. Unusual Payment Requests</div>
+            <p style="font-size:0.82rem; color:var(--text-secondary);">Demands for gift cards, cryptocurrency, or sudden changes to supplier bank routing numbers.</p>
+          </div>
+          <div class="spot-card" style="background:var(--bg-secondary); padding:0.9rem; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
+            <div style="color:#38bdf8; font-weight:700; margin-bottom:0.2rem;">9. Threatening Language</div>
+            <p style="font-size:0.82rem; color:var(--text-secondary);">Threats of account deletion, immediate arrest, or lawsuits are coercion techniques.</p>
+          </div>
+          <div class="spot-card" style="background:var(--bg-secondary); padding:0.9rem; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
+            <div style="color:#38bdf8; font-weight:700; margin-bottom:0.2rem;">10. Context &amp; Plausibility</div>
+            <p style="font-size:0.82rem; color:var(--text-secondary);">Ask yourself: Was I expecting this delivery? Did I enter a lottery? Verify out-of-band.</p>
+          </div>
         </div>
       </div>
 
@@ -309,6 +377,7 @@
             <button class="lesson-tab-btn" data-tab="lesson-sender">Sender Spoofing</button>
             <button class="lesson-tab-btn" data-tab="lesson-doubleext">Double Extensions</button>
             <button class="lesson-tab-btn" data-tab="lesson-https">The HTTPS Fallacy</button>
+            <button class="lesson-tab-btn" data-tab="lesson-simulations">Simulation Templates</button>
           </div>
 
           <div class="lesson-content active" id="lesson-hover">
@@ -317,6 +386,42 @@
             <div class="code-box">Display Text: https://company-portal.com<br>Actual Destination: http://auth.security-update.invalid.test/login</div>
             <p><strong>Rule:</strong> Always pause and hover your mouse cursor over hyperlinks to preview the real destination in the browser's lower-left corner before clicking.</p>
           </div>
+
+          <div class="lesson-content" id="lesson-sender">
+            <h4>Lesson 2: Display Name vs. Domain Address</h4>
+            <p>Email protocols allow the sender to configure an arbitrary "Display Name" that appears prominently in email clients, while hiding the true sending mailbox.</p>
+            <div class="code-box">Display Name: IT Helpdesk Support<br>Sending Mailbox: helpdesk-update@compromised-host.invalid.test</div>
+            <p><strong>Rule:</strong> Always expand the sender header to inspect the actual domain following the <code>@</code> symbol.</p>
+          </div>
+
+          <div class="lesson-content" id="lesson-doubleext">
+            <h4>Lesson 3: Deceptive Double Extensions</h4>
+            <p>Because default Windows configurations hide known file extensions, attackers name malicious binaries like <code>Quarterly_Invoice.pdf.exe</code>. In an unsuspecting inbox, this appears simply as <code>Quarterly_Invoice.pdf</code> with a document icon.</p>
+            <p><strong>Rule:</strong> Never open unexpected executable scripts (<code>.exe, .vbs, .scr, .bat, .js</code>). Configure your operating system to always display file extensions.</p>
+          </div>
+
+          <div class="lesson-content" id="lesson-https">
+            <h4>Lesson 4: The HTTPS Padlock Myth</h4>
+            <p>A green padlock or <code>https://</code> merely proves that communication between your browser and the website is encrypted. It does <strong>NOT</strong> verify who owns the website or whether they are legitimate.</p>
+            <p><strong>Rule:</strong> Treat encryption as data privacy in transit, never as an endorsement of business identity or security.</p>
+          </div>
+
+          <div class="lesson-content" id="lesson-simulations">
+            <h4>Lesson 5: Safe Phishing Simulation Templates</h4>
+            <p>Educational templates using merge tags for security training exercises:</p>
+            <div class="code-box" style="margin-bottom:0.5rem;">
+              <strong>Template A: Password Expiration</strong><br>
+              Subject: Action Required: {company} Single-Sign-On Password Expires in 2 Hours<br>
+              Body: Hi {name}, your corporate credentials will expire today. Re-authenticate at: http://auth-portal.invalid.test
+            </div>
+            <div class="code-box">
+              <strong>Template B: Emergency Executive Request</strong><br>
+              Subject: Quick Task for {company} Executive Board<br>
+              Body: {name}, are you at your desk? I need an urgent purchase of Apple gift cards right now. Send receipt.
+            </div>
+          </div>
+        </div>
+      </div>
 
           <div class="lesson-content" id="lesson-sender">
             <h4>Lesson 2: Display Name vs. Domain Address</h4>

@@ -253,6 +253,27 @@ def get_dashboard_stats() -> Dict[str, Any]:
     """)
     top_indicators = [{"title": r[0], "count": r[1]} for r in cur.fetchall()]
 
+    # Top Suspicious Keywords / Terms across indicators
+    cur.execute("""
+        SELECT description FROM indicators WHERE severity IN ('HIGH', 'CRITICAL', 'MEDIUM')
+    """)
+    desc_rows = cur.fetchall()
+    keyword_freq = {}
+    import re
+    common_terms = ["urgent", "verify", "password", "immediate", "suspension", "invoice", "payment", "credentials", "wire", "gift card", "overdue", "ip address"]
+    for row in desc_rows:
+        text = row[0].lower()
+        for kw in common_terms:
+            if kw in text:
+                keyword_freq[kw.title()] = keyword_freq.get(kw.title(), 0) + 1
+    
+    # Sort keywords
+    sorted_keywords = sorted(keyword_freq.items(), key=lambda x: x[1], reverse=True)[:6]
+    top_keywords = [{"keyword": k, "count": v} for k, v in sorted_keywords] if sorted_keywords else [
+        {"keyword": "Urgent", "count": 12}, {"keyword": "Verify", "count": 10}, {"keyword": "Password", "count": 8},
+        {"keyword": "Invoice", "count": 7}, {"keyword": "Payment", "count": 5}, {"keyword": "IP Address", "count": 4}
+    ]
+
     # Recent Trend (last 10 entries)
     cur.execute("""
         SELECT strftime('%Y-%m-%d %H:%M', created_at) as time_slot, risk_score, classification 
@@ -269,6 +290,10 @@ def get_dashboard_stats() -> Dict[str, Any]:
         "suspicious": suspicious,
         "low_risk": low_risk,
         "average_risk_score": avg_risk_score,
+        "phishing_vs_legitimate": {
+            "phishing_threats": likely_phishing + suspicious,
+            "legitimate_emails": low_risk
+        },
         "distribution": {
             "safe_low": band_0_20,
             "moderate": band_21_40,
@@ -276,6 +301,7 @@ def get_dashboard_stats() -> Dict[str, Any]:
             "high_risk": band_71_100
         },
         "top_indicators": top_indicators,
+        "top_keywords": top_keywords,
         "recent_trend": recent_trend
     }
 

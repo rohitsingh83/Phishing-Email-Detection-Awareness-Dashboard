@@ -51,6 +51,8 @@ class DashboardStatsResponse(BaseModel):
     suspicious: int
     low_risk: int
     average_risk_score: float
+    phishing_vs_legitimate: Optional[Dict[str, int]] = None
     distribution: Dict[str, int]
     top_indicators: List[Dict[str, Any]]
+    top_keywords: Optional[List[Dict[str, Any]]] = None
     recent_trend: List[Dict[str, Any]]

@@ -1,0 +1,22 @@
+From: hr-operations@apextech.example.org
+Subject: Annual Cybersecurity and Data Protection Policy Update 2026
+Date: Tue, 29 Sep 2026 09:00:00 +0000
+
+Dear Team,
+
+Please take a few moments to review our updated corporate Data Protection Policy for 2026.
+The revisions reflect our commitment to protecting employee and customer information in accordance with international security standards.
+
+Key Highlights:
+1. Updated guidance on multi-factor authentication (MFA) requirements.
+2. Guidelines on handling sensitive intellectual property.
+3. Reporting suspicious communications to our internal Security Operations Center (soc-team@apextech.example.org).
+
+You can review the full policy document on our employee intranet portal:
+https://intranet.apextech.example.org/compliance/policy-2026
+
+No immediate action or credential entry is required.
+
+Sincerely,
+Human Resources & Governance Team
+Apex Technologies

@@ -1,0 +1,19 @@
+From: security-alert@account-verify.invalid.test
+Subject: URGENT: Immediate Account Verification Required Within 24 Hours
+Date: Tue, 29 Sep 2026 11:30:00 +0000
+
+Dear Valued Customer / Account Holder,
+
+We detected suspicious and unauthorized login attempts to your account from an unknown IP address.
+To protect your funds and personal information, your account access has been temporarily restricted.
+
+ACT NOW: You must verify your credentials immediately to avoid permanent account termination.
+Failure to confirm your password and identity within 24 hours will result in permanent suspension.
+
+Click below to verify your account right now:
+http://198.51.100.10/verify-account-login
+
+Do not ignore this warning.
+
+Security Department
+Account Protection Division

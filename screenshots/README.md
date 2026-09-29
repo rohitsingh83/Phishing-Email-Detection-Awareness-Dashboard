@@ -1,43 +1,53 @@
-# Screenshot & Visual Proof Catalog
+# Visual Proof-of-Work & Screenshots Catalog
 
-This folder contains visual proof-of-work documentation demonstrating full system execution. Use these screenshots for your GitHub repository README, portfolio presentation, and LinkedIn showcase.
-
----
-
-## 📸 26 Required Screenshot Checkpoints
-
-| # | Filename | Visual Subject / View | What it Proves |
-| :-: | :--- | :--- | :--- |
-| **01** | `01_project_structure.png` | VS Code / File Explorer tree view | Professional modular project folder hierarchy. |
-| **02** | `02_architecture_diagram.png` | Architecture flow diagram from `docs/ARCHITECTURE.md` | Clear end-to-end design and engineering rigor. |
-| **03** | `03_synthetic_dataset_csv.png` | CSV view of `data/phishing_email_dataset.csv` | 600 safe, balanced legitimate and phishing records. |
-| **04** | `04_dataset_generation_terminal.png` | Terminal running `python data/generate_dataset.py` | Programmatic data synthesis using RFC reserved domains. |
-| **05** | `05_email_analyzer_console.png` | Browser at `http://127.0.0.1:8000` (Full UI) | Clean, responsive cybersecurity web console. |
-| **06** | `06_legitimate_email_analysis.png` | Analysis of meeting notice (`SAFE / LOW RISK`) | Low threat scoring on authentic communications. |
-| **07** | `07_urgent_phishing_analysis.png` | Analysis of suspension lure (`HIGH RISK`) | High threat scoring on credential and time-pressure attacks. |
-| **08** | `08_sender_forensics_drawer.png` | Expanded "Sender Forensics" accordion | Typosquatting and display-name spoofing detection. |
-| **09** | `09_url_forensics_drawer.png` | Expanded "URL Static String Analysis" accordion | Detection of raw IP hostnames, unencrypted HTTP, and length. |
-| **10** | `10_attachment_metadata_drawer.png` | Expanded "Attachment Metadata" accordion | Double extension masquerading detection (`.pdf.exe`). |
-| **11** | `11_risk_gauge_high.png` | Close-up of threat score dial (80+/100) | Visual threat dial and color-coded risk meter. |
-| **12** | `12_explainability_indicators.png` | Close-up of "Forensic Indicators (WHY?)" list | Explainable security decisions with severity tags. |
-| **13** | `13_recommended_playbook.png` | Close-up of "Recommended SOC Playbook" | Actionable guidance and mitigation steps. |
-| **14** | `14_dashboard_kpi_cards.png` | Top 5 KPI telemetry metric cards | Real-time counts of total, phishing, and average risk. |
-| **15** | `15_classification_chart.png` | Chart.js doughnut chart | Visual distribution of threat classifications. |
-| **16** | `16_risk_distribution_chart.png` | Chart.js bar chart of risk bands (0-20, 21-40, etc.) | Statistical distribution across threat tiers. |
-| **17** | `17_top_indicators_chart.png` | Horizontal bar chart of top indicators | High-frequency IOC tracking across all scanned emails. |
-| **18** | `18_timeline_trend_chart.png` | Chart.js line chart of threat score timeline | Telemetry trend monitoring over time. |
-| **19** | `19_ml_training_terminal.png` | Terminal running `python ml/train_model.py` | Execution of sublinear TF-IDF + Naive Bayes training. |
-| **20** | `20_confusion_matrix_report.png` | Terminal running `python ml/evaluation.py` | Tabular confusion matrix, 100% precision & recall. |
-| **21** | `21_awareness_checklist.png` | Interactive "Before You Click" checklist | Practical defensive habit reinforcement. |
-| **22** | `22_awareness_microlessons.png` | Active micro-lessons tabs (Hovering, HTTPS myth) | Bite-sized cybersecurity employee training. |
-| **23** | `23_audit_history_table.png` | Searchable analysis history data table | Relational SQLite audit trail with search and filtering. |
-| **24** | `24_audit_detail_modal.png` | Pop-up modal showing forensic record details | In-depth historical investigation capabilities. |
-| **25** | `25_automated_tests_terminal.png` | Terminal running `python tests/test_phishing_system.py` | All 25 automated security tests passing in 0.08s. |
-| **26** | `26_fastapi_interactive_docs.png` | Browser at `http://127.0.0.1:8000/docs` | Live Swagger UI documenting all REST API endpoints. |
+This gallery provides visual verification and proof-of-work documentation demonstrating full system execution across the Email Analyzer, Hybrid Detection Engine, SOC Telemetry Dashboard, Awareness Module, and Automated Test Suite.
 
 ---
 
-## 💡 Capturing Instructions
-1. Run `python backend/app.py` and open `http://127.0.0.1:8000`.
-2. Use Windows Snipping Tool (`Win + Shift + S`) to capture the targeted regions.
-3. Save each screenshot directly into this `screenshots/` directory matching the exact filename listed above.
+## 🖼️ Gallery Preview
+
+### 1. Email Security Inspection Console & KPIs
+Top-level navigation, live KPI telemetry metrics, and the multi-field forensic input form with one-click test sample loaders:
+![Email Security Inspection Console](01_hero_overview.png)
+
+---
+
+### 2. High-Risk Threat Detection & Gauge
+Hybrid threat assessment on an urgent account suspension attack vector showing an 88/100 risk score, dynamic threat gauge, categorized forensic indicators (WHY?), and recommended SOC L1/L2 playbook steps:
+![High Risk Phishing Detection](02_phishing_analysis_threat_gauge.png)
+
+---
+
+### 3. Legitimate Email Baseline Analysis
+Analysis of a routine company all-hands meeting invitation evaluated as Safe / Low Risk (12/100) demonstrating zero false positives:
+![Legitimate Email Low-Risk Analysis](03_legitimate_email_analysis.png)
+
+---
+
+### 4. SOC Security Analytics & Telemetry Dashboard
+Complete SOC telemetry view featuring all 6 interactive Chart.js visualizations (Threat Classifications, Phishing Ratio, Top Attack Indicators, Risk Score Distribution, Timeline Trend, and Suspicious Keywords):
+![SOC Security Telemetry Dashboard](04_soc_telemetry_dashboard.png)
+
+---
+
+### 5. Defensive Security Awareness & Training Module
+Interactive 8-step "Before You Click" verification checklist, educational micro-lessons (Hovering, HTTPS Myth, Attachments), and synthetic simulation templates:
+![Security Awareness Module](05_security_awareness_training.png)
+
+---
+
+### 6. Forensic Audit Trail & Investigation History
+Searchable historical investigation log with severity badges, category tags, timestamp filtering, and drill-down inspection:
+![Forensic Audit Trail](06_forensic_audit_history.png)
+
+---
+
+### 7. Automated Security Test Suite Verification (25/25 Tests Passing)
+Terminal execution of `tests/test_phishing_system.py` verifying regex parsers, typosquatting logic, ML inference, and API endpoints:
+![Automated Test Suite Verification](07_automated_tests_terminal.png)
+
+---
+
+### 8. Machine Learning Model Training & Evaluation
+Execution of `ml/train_model.py` demonstrating 100% precision, recall, and F1-score with confusion matrix on held-out test splits:
+![ML Model Training & Evaluation](08_ml_training_evaluation.png)

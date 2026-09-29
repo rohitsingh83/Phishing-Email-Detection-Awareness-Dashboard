@@ -270,35 +270,47 @@ See [`docs/TESTING_REPORT.md`](docs/TESTING_REPORT.md) for the detailed test mat
 
 ---
 
-## 📸 Proof of Work & Screenshots Checklist
-To showcase this project on GitHub and LinkedIn, capture the following 26 screenshots (saved in `screenshots/`):
+## 📸 Visual Showcase & Platform Screenshots
 
-1. `01_project_structure.png` - Project directory hierarchy.
-2. `02_architecture_diagram.png` - System data flow diagram.
-3. `03_synthetic_dataset_csv.png` - Dataset in CSV viewer.
-4. `04_dataset_generation_terminal.png` - Output of `data/generate_dataset.py`.
-5. `05_email_analyzer_console.png` - Full Email Analyzer interface.
-6. `06_legitimate_email_analysis.png` - Low Risk assessment on routine meeting email.
-7. `07_urgent_phishing_analysis.png` - High Risk assessment on account suspension lure.
-8. `08_sender_forensics_drawer.png` - Expanded sender forensics view.
-9. `09_url_forensics_drawer.png` - Expanded URL static analysis findings.
-10. `10_attachment_metadata_drawer.png` - Double extension detection (`.pdf.exe`).
-11. `11_risk_gauge_high.png` - Threat dial showing 85+/100 High Risk.
-12. `12_explainability_indicators.png` - "WHY?" indicator list with severity badges.
-13. `13_recommended_playbook.png` - SOC action playbook checklist.
-14. `14_dashboard_kpi_cards.png` - Top 5 telemetry metric cards.
-15. `15_classification_chart.png` - Donut chart of threat classifications.
-16. `16_risk_distribution_chart.png` - Bar chart of risk score bands.
-17. `17_top_indicators_chart.png` - Horizontal bar chart of frequent IOCs.
-18. `18_timeline_trend_chart.png` - Line chart of recent threat scores.
-19. `19_ml_training_terminal.png` - Output of `ml/train_model.py`.
-20. `20_confusion_matrix_report.png` - Terminal confusion matrix from `ml/evaluation.py`.
-21. `21_awareness_checklist.png` - Interactive "Before You Click" checklist.
-22. `22_awareness_microlessons.png` - Training micro-lessons tab view.
-23. `23_audit_history_table.png` - Searchable analysis history table.
-24. `24_audit_detail_modal.png` - Pop-up modal showing forensic details.
-25. `25_automated_tests_terminal.png` - `tests/test_phishing_system.py` passing 25/25 tests.
-26. `26_fastapi_interactive_docs.png` - Swagger UI at `http://127.0.0.1:8000/docs`.
+### 1. Email Security Inspection Console & Live KPIs
+Top navigation, live KPI telemetry metrics, and the multi-field forensic input form with one-click test sample loaders:
+
+![Email Security Inspection Console](screenshots/01_hero_overview.png)
+
+### 2. High-Risk Threat Detection & Dynamic Gauge
+Hybrid threat assessment on an urgent account suspension attack vector showing an 88/100 risk score, dynamic threat gauge, categorized forensic indicators (WHY?), and recommended SOC L1/L2 playbook steps:
+
+![High Risk Phishing Detection](screenshots/02_phishing_analysis_threat_gauge.png)
+
+### 3. Legitimate Email Baseline Analysis
+Analysis of a routine company all-hands meeting invitation evaluated as Safe / Low Risk (12/100) demonstrating zero false positives:
+
+![Legitimate Email Low-Risk Analysis](screenshots/03_legitimate_email_analysis.png)
+
+### 4. SOC Security Analytics & Telemetry Dashboard
+Complete SOC telemetry view featuring all 6 interactive Chart.js visualizations (Threat Classifications, Phishing Ratio, Top Attack Indicators, Risk Score Distribution, Timeline Trend, and Suspicious Keywords):
+
+![SOC Security Telemetry Dashboard](screenshots/04_soc_telemetry_dashboard.png)
+
+### 5. Defensive Security Awareness & Interactive Checklist
+Interactive 8-step "Before You Click" verification checklist, educational micro-lessons (Hovering, HTTPS Myth, Attachments), and synthetic simulation templates:
+
+![Security Awareness Module](screenshots/05_security_awareness_training.png)
+
+### 6. Forensic Audit Trail & Investigation History
+Searchable historical investigation log with severity badges, category tags, timestamp filtering, and drill-down inspection:
+
+![Forensic Audit Trail](screenshots/06_forensic_audit_history.png)
+
+### 7. Automated Security Test Suite Verification (25/25 Tests Passing)
+Terminal execution of `tests/test_phishing_system.py` verifying regex parsers, typosquatting logic, ML inference, and API endpoints:
+
+![Automated Test Suite Verification](screenshots/07_automated_tests_terminal.png)
+
+### 8. Machine Learning Model Training & Evaluation
+Execution of `ml/train_model.py` demonstrating 100% precision, recall, and F1-score with confusion matrix on held-out test splits:
+
+![ML Model Training & Evaluation](screenshots/08_ml_training_evaluation.png)
 
 ---
 
